@@ -26,9 +26,9 @@ ErrorDocument 403 default
 
 
 ##License
-The license for this plugin is [Creative Commons: Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/).
+The license for this software is [Creative Commons: Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/).
 
-This means you can Share and Redistribute in any medium or form. You can Adapt the code to suit your needs, and build in new code. The plugin can be used personally or commercially.
+This means you can Share and Redistribute in any medium or form. You can Adapt the code to suit your needs, and build in new code. The software can be used personally or commercially.
 
 You must give attribution to the original author ([Ryan Fitton](https://ryanfitton.co.uk)). You can give attribution by including my name and linking to my website: [https://ryanfitton.co.uk](https://ryanfitton.co.uk) within the top of the monitoring PHP code.
 
