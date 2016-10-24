@@ -3,14 +3,14 @@
  * website-check-monitor.php
  *
  * This small PHP script will check your MySQL status by attempting a connection.
- * It will then generate an appropriate response for use in StatusCake (https://www.statuscake.com/).
+ * It will then generate an appropriate response for use in monitoring services such as StatusCake (https://www.statuscake.com/) or PHP Server Monitor (http://www.phpservermonitor.org/).
  * This code may be used with other monitoring services, however you may need to perform some extra coding modifications.
  *
  * Repository page: https://bitbucket.org/ryanfitton/website-check-monitor
  * More information: https://ryanfitton.co.uk/blog/using-statuscake-com-to-monitor-your-website-and-database-uptime/
  *
  * @author Ryan Fitton
- * @version 1.0
+ * @version 1.1
  * @website https://ryanfitton.co.uk
  * @license https://bitbucket.org/ryanfitton/website-check-monitor (Within README.md)
  * 
@@ -40,6 +40,24 @@ $mtime = microtime();
 $mtime = explode(" ",$mtime);
 $mtime = $mtime[1] + $mtime[0];
 $startTime = $mtime;
+
+
+//Check if the PHP 'http_response_code' function is available
+//Only available in PHP 5.4 and greater - http://stackoverflow.com/questions/3258634/php-how-to-send-http-response-code
+//If not available, a function is created
+if (!function_exists('http_response_code')) {
+    function http_response_code($newcode = NULL)
+    {
+        static $code = 200;
+        if($newcode !== NULL)
+        {
+            header('X-PHP-Response-Code: '.$newcode, true, $newcode);
+            if(!headers_sent())
+                $code = $newcode;
+        }       
+        return $code;
+    }
+}
 
 
 // Check MySQL using the provided connection information

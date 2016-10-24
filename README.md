@@ -1,7 +1,7 @@
 #Readme
 
 * Author: [Ryan Fitton](https://ryanfitton.co.uk)
-* Version: `1.0`
+* Version: `1.1`
 * Website: [https://ryanfitton.co.uk](https://ryanfitton.co.uk)
 * More info on this repository: [https://ryanfitton.co.uk/blog/using-statuscake-com-to-monitor-your-website-and-database-uptime/](https://ryanfitton.co.uk/blog/using-statuscake-com-to-monitor-your-website-and-database-uptime/)
 
@@ -13,6 +13,15 @@ For use with StatusCake: [statuscake.com](https://www.statuscake.com/).
 This code may be used with other monitoring services, however you may need to perform some extra coding modifications.
 
 This code will send a HTTP Status 200 (Ok) or Status 404 (Not found) depending if a database connection can be established. This will 'trick' the uptime test into thinking if the page is up/down.
+
+
+###Using the script under .htpasswd
+If you have protected this file with .htaccess and .htpasswd, you can pass the login info over the URL such as this:
+
+https://yourusername:yourpassword@yourdomain.co.uk/website-check-monitor/website-check-monitor.php
+
+This is useful to use when status monitoring providers do not allow you to specify if the directory requires login details.
+
 
 ###WordPress Issues
 If you experience 404 issues with WordPress when using .htaccess/.htpasswd protected folders.
